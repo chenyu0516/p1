@@ -24,17 +24,9 @@ def probability_test():
         data_list.append(0)
     for i in range(test_rounds):
         result = walking()
-        for j in range(test_index + 1):
-            if result == 0:
-                data_list[test_index] += 1
-                break
-            elif result == j:
-                data_list[test_index + j] += 1
-                break
-            elif result == -j:
-                data_list[test_index - j] += 1
-                break
+        data_list[result+test_index] += 1
     return data_list
+
 
 if __name__ == '__main__':
     data = probability_test()
